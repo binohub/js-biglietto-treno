@@ -8,11 +8,10 @@ document.getElementById("ticket-price").innerHTML = (`oggi il prezzo è di soli 
 
 //chiedi all'utente il numero di km che vuole percorrere = dudeKm
 const dudeKm = prompt("quanti km vuoi percorrere? 🤔");
-document.getElementById("dude-km").innerHTML = (`essendo che hai intenzione di percorrere ${dudeKm} km...`);
 
 //stampa il ticketFullPrice
 const ticketFullPrice = ticketPrice * dudeKm;
-document.getElementById("ticket-full-price").innerHTML = (`...il prezzo totale è di ${ticketFullPrice.toFixed(2)}€ 💸`);
+document.getElementById("ticket-full-price").innerHTML = (`1100il prezzo totale è di ${ticketFullPrice.toFixed(2)}€ 💸`);
 
 //chiedi all'utente l'età e applica lo sconto
 const dudeAge = prompt("digita la tua età cosicchè io possa controllare per lei se può usufruire di qualche sconto speciale! 😋" );
