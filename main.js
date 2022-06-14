@@ -7,17 +7,23 @@ document.getElementById("ticket-price").innerHTML = (`oggi il prezzo è di soli 
 
 
 //chiedi all'utente il numero di km che vuole percorrere = dudeKm
-const dudeKm = prompt("quanti km vuoi percorrere? 🤔");
+const dudeKm = parseInt(prompt("quanti km vuoi percorrere? 🤔"));
+if (isNaN(dudeKm)){
+    alert("digita un numero valido!");
+}
 
 //stampa il ticketFullPrice
 const ticketFullPrice = ticketPrice * dudeKm;
-document.getElementById("ticket-full-price").innerHTML = (`1100il prezzo totale è di ${ticketFullPrice.toFixed(2)}€ 💸`);
+document.getElementById("ticket-full-price").innerHTML = (`il prezzo totale è di ${ticketFullPrice.toFixed(2)}€ 💸`);
 
 //chiedi all'utente l'età e applica lo sconto
-const dudeAge = prompt("digita la tua età cosicchè io possa controllare per lei se può usufruire di qualche sconto speciale! 😋" );
+const dudeAge = parseInt(prompt("digita la tua età cosicchè io possa controllare per lei se può usufruire di qualche sconto speciale! 😋" ));
+if (isNaN(dudeAge)){
+    alert("digita un numero valido!");
+}
 //se età minore di 18
 if (dudeAge < 18){
-    const dudeSale = parseInt((ticketFullPrice * 20) / 100);
+    const dudeSale = (ticketFullPrice * 20) / 100;
     document.getElementById("dude-sale").innerHTML = (`per i minorenni abbiamo uno sconto del 20% nel suo caso di ${dudeSale}€ `);
     const ticketFinalPrice = ticketFullPrice - dudeSale;
     document.getElementById("ticket-final-price").innerHTML = (`il suo prezzo scende a ${ticketFinalPrice.toFixed(2)}€!🤯`);
