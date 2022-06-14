@@ -19,15 +19,16 @@ const dudeAge = prompt("se digiti la tua età posso controllare per te se puoi u
 //se età minore di 18
 if (dudeAge < 18){
     const dudeSale = parseInt((ticketFullPrice * 20) / 100);
-    console.log(`per i minorenni abbiamo uno sconto del 20% ovvero ${dudeSale} `);
-}else if (dudeAge < 65){
-    const dudeSale = (ticketFullPrice * 40) / 100;
-    console.log(`per gli over 65 abbiamo uno sconto del 40%`);
+    console.log(`per i minorenni abbiamo uno sconto del 20% nel suo caso di ${dudeSale}€ `);
+    const ticketFinalPrice = ticketFullPrice - dudeSale;
+    console.log(`il tuo prezzo scende a ${ticketFinalPrice}€!`);
+}else if (dudeAge > 65){
+    const dudeSale = parseInt((ticketFullPrice * 40) / 100);
+    console.log(`per gli over 65 abbiamo uno sconto del 40% nel suo caso di ${dudeSale}€`);
+    const ticketFinalPrice = ticketFullPrice - dudeSale;
+    console.log(`il tuo prezzo scende a ${ticketFinalPrice}€!`);
 }else{
     console.log(`non abbiamo sconti per te :c`);
+    console.log(`il prezzo per te rimane a ${ticketFinalPrice}€`);
 }
-
-//stampa il ticketFinalPrice
-const ticketFinalPrice = ticketFullPrice - dudeSale;
-console.log(`il prezzo finale è di ${ticketFinalPrice}€`);
 
